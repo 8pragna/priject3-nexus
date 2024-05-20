@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Techy Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="nexus.png" alt="Techy Software Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html"><strong>Home</strong></a></li>
+                <li><a href="about.html"><strong>About Us</strong></a></li>
+                <li><a href="products.html"><strong>Products/Services</strong></a></li>
+                <li><a href="contact.html"><strong>Contact Us</strong></a></li>
+                <li><a href="feedback.html"><strong>Feedback</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="search-results">
+        <h2>Search Results</h2>
+        <div id="results"></div>
+    </section>
+    <script>
+        // Get the search query from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query');
+        
+        // Display the search query
+        document.getElementById('results').innerHTML = `<p>Results for: <strong>${query}</strong></p>`;
+
+        // Here, you would typically fetch and display search results from your backend
+        // For demonstration purposes, let's show some dummy results
+        const dummyResults = [
+            { title: "Product 1", description: "Description of product 1 related to " + query },
+            { title: "Service 1", description: "Description of service 1 related to " + query },
+            { title: "Article 1", description: "Description of article 1 related to " + query }
+        ];
+
+        const resultsContainer = document.getElementById('results');
+        dummyResults.forEach(result => {
+            const resultItem = document.createElement('div');
+            resultItem.innerHTML = `<h3>${result.title}</h3><p>${result.description}</p>`;
+            resultsContainer.appendChild(resultItem);
+        });
+    </script>
+</body>
+</html>

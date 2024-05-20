@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Be Hive</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting in the traditional way
+            document.getElementById('success-message').style.display = 'block'; // Show the success message
+            // Optionally, you could also reset the form
+            document.getElementById('contact-form').reset();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="nexus.png" alt="Be Hive Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html"><strong>Home</strong></a></li>
+                    <li><a href="about.html"><strong>About Us</strong></a></li>
+                    <li><a href="products.html"><strong>Products/Services</strong></a></li>
+                    <li><a href="contact.html"><strong>Contact Us</strong></a></li>
+                    <li><a href="feedback.html"><strong>Feedback</strong></a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div>
+                    <h3>Questions or Further Information</h3>
+                    <p>If you have any questions or need further information, feel free to contact us at any time.</p>
+                </div>
+                <div>
+                    <h3>Phone</h3>
+                    <p>+91 9959171153</p>
+                </div>
+                <div>
+                    <h3>Email</h3>
+                    <p>support@behive.com</p>
+                </div>
+            </div>
+            <form id="contact-form" onsubmit="handleSubmit(event)">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <p id="success-message" style="display: none; color: green;">Message successfully sent!, we will contact you as soon as possible Thank you for reaching us</p>
+        </section>
+    </div>
+</body>
+</html>
